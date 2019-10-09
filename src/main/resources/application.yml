@@ -1,0 +1,25 @@
+management:
+  security:
+    enabled: false
+server:
+  ssl:
+    key-store: classpath:app_keystore.jks
+    key-store-password: changeme!
+    key-store-type: JKS
+    key-alias: nocrio
+    key-password: changeme!
+---
+spring:
+  profiles: dev
+server:
+  port: 7000
+---
+spring:
+  profiles: test
+server:
+  port: 8000
+---
+spring:
+  profiles: prod
+server:
+  port: 9000
